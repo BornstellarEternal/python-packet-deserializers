@@ -72,7 +72,7 @@ class Marker:
                 marker  -   The sync marker
                 format  -   The format string of the sync marker
     """
-    def __init__(self, marker, format):
+    def __init__(self, marker: int, format: str):
         self.marker = marker
         self.format = format
         self.length = struct.calcsize(self.format)
@@ -91,9 +91,8 @@ class Packet:
                 a marker component
     @attrb      (see class marker)
     """
-    def __init__(self, marker, marker_format):
+    def __init__(self, marker: int, marker_format: str):
         self.marker = Marker(marker, marker_format)
-
         self.format = '<III'
         self.length = struct.calcsize(self.format)
 
